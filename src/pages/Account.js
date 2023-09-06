@@ -68,7 +68,7 @@ function Account() {
     >
       <Header />
       <section
-        className=" ml-[50%] translate-x-[-50%] justify-center items-center
+        className=" ml-[50%] translate-x-[-50%] justify-center items-center w-[550px]
        rounded-lg bg-white drop-shadow-xl p-7 mt-10 max-[550px]:w-[80%] mx-5"
       >
         <section

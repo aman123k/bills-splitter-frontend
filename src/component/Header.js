@@ -55,7 +55,7 @@ function Header() {
                 className="cursor-pointer  max-[550px]:px-3 
              max-[550px]:tracking-wider rounded-lg max-[550px]:text-start"
               >
-                Activitiy
+                Activity
               </li>
             </Link>
             <Link to="/account">
