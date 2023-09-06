@@ -12,7 +12,7 @@ function Account() {
   const [userInfo, setuserInfo] = useState({});
   const getUserInfo = async () => {
     const response = await fetch(
-      "https://billsspiltter.onrender.com/getUserInfo",
+      "https://bills-splitter-backend.onrender.com/getUserInfo",
       {
         credentials: "include",
       }
@@ -26,7 +26,7 @@ function Account() {
   };
   const userLogout = async () => {
     const response = await fetch(
-      "https://billsspiltter.onrender.com/userLogout",
+      "https://bills-splitter-backend.onrender.com/userLogout",
       {
         method: "post",
         headers: {

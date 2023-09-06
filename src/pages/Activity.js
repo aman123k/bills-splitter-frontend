@@ -11,7 +11,7 @@ function Activity() {
   const [image, setImage] = useState([]);
   const getAllactivitys = async () => {
     const response = await fetch(
-      "https://billsspiltter.onrender.com/activitys",
+      "https://bills-splitter-backend.onrender.com/activitys",
       {
         credentials: "include",
       }

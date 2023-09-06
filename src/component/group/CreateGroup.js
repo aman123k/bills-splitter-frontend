@@ -50,14 +50,17 @@ function CreateGroup({ setImage, setMembers, setUser }) {
         member: groupMember,
         groupType: groupType,
       };
-      const response = await fetch(`https://billsspiltter.onrender.com/group`, {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `https://bills-splitter-backend.onrender.com/group`,
+        {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify(data),
+        }
+      );
       const result = await response.json();
       if (result.success) {
         toast.success(result.response);

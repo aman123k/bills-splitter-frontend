@@ -8,7 +8,7 @@ function Bills() {
   const [user, setUser] = useState([]);
   const getAllBills = async () => {
     const response = await fetch(
-      "https://billsspiltter.onrender.com/getAllBills",
+      "https://bills-splitter-backend.onrender.com/getAllBills",
       {
         credentials: "include",
       }

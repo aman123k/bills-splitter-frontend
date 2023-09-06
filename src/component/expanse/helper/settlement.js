@@ -1,7 +1,7 @@
 const settlement = async (email, id, navgation, toast) => {
   try {
     const response = await fetch(
-      `https://billsspiltter.onrender.com/settlement/${email}`,
+      `https://bills-splitter-backend.onrender.com/settlement/${email}`,
       {
         method: "POST",
         headers: {

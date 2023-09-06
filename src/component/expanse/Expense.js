@@ -49,7 +49,7 @@ function Expense({
       return toast.error("Select Atleast one");
     } else {
       const response = await fetch(
-        "https://billsspiltter.onrender.com/createExpense",
+        "https://bills-splitter-backend.onrender.com/createExpense",
         {
           method: "POST",
           headers: {

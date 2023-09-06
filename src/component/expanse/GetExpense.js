@@ -1,7 +1,7 @@
 const getExpense = async (data, setAllExpense) => {
   try {
     const response = await fetch(
-      "https://billsspiltter.onrender.com/getExpense",
+      "https://bills-splitter-backend.onrender.com/getExpense",
       {
         method: "POST",
         headers: {

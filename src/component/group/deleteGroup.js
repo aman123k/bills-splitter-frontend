@@ -1,7 +1,7 @@
 const deleteGroup = async (id, navigation, toast) => {
   try {
     const response = await fetch(
-      `https://billsspiltter.onrender.com/deleteGroup/${id}`,
+      `https://bills-splitter-backend.onrender.com/deleteGroup/${id}`,
       {
         method: "POST",
         headers: {

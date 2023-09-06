@@ -20,7 +20,7 @@ function Login() {
       password,
     };
     const response = await toast.promise(
-      fetch("https://billsspiltter.onrender.com/login", {
+      fetch("https://bills-splitter-backend.onrender.com/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

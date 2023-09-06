@@ -28,7 +28,7 @@ function Registration() {
       password,
     };
     const response = await fetch(
-      "https://billsspiltter.onrender.com/registration",
+      "https://bills-splitter-backend.onrender.com/registration",
       {
         method: "post",
         headers: {

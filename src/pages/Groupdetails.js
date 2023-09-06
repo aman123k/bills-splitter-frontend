@@ -35,7 +35,7 @@ function Groupdetails() {
   const getGroupMembers = async () => {
     try {
       const response = await fetch(
-        "https://billsspiltter.onrender.com/getGroupMembers",
+        "https://bills-splitter-backend.onrender.com/getGroupMembers",
         {
           method: "POST",
           headers: {

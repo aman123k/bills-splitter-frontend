@@ -2,9 +2,12 @@ import GroupType from "../../data/GroupType";
 
 const getGroups = async (setImage, setMembers, setUser) => {
   try {
-    const response = await fetch("https://billsspiltter.onrender.com/groups", {
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://bills-splitter-backend.onrender.com/groups",
+      {
+        credentials: "include",
+      }
+    );
     const result = await response.json();
 
     if (result.success === false) {
