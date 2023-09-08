@@ -25,14 +25,18 @@ function Account() {
     }
   };
   const userLogout = async () => {
-    const response = await fetch(
-      "https://bills-splitter-backend.onrender.com/userLogout",
-      {
+    const response = await toast.promise(
+      fetch("https://bills-splitter-backend.onrender.com/userLogout", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
         },
         credentials: "include",
+      }),
+      {
+        loading: "loading data",
+        success: "data loaded successfully",
+        error: "faild to load data",
       }
     );
     const result = await response.json();

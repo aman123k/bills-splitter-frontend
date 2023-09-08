@@ -27,14 +27,19 @@ function Registration() {
       email,
       password,
     };
-    const response = await fetch(
-      "https://bills-splitter-backend.onrender.com/registration",
-      {
+
+    const response = await toast.promise(
+      fetch("https://bills-splitter-backend.onrender.com/registration", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
+      }),
+      {
+        loading: "loading data",
+        success: "data loaded successfully",
+        error: "faild to load data",
       }
     );
     const newData = await response.json();

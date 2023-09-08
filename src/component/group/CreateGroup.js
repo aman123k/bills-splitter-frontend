@@ -50,15 +50,19 @@ function CreateGroup({ setImage, setMembers, setUser }) {
         member: groupMember,
         groupType: groupType,
       };
-      const response = await fetch(
-        `https://bills-splitter-backend.onrender.com/group`,
-        {
+      const response = await toast.promise(
+        fetch(`https://bills-splitter-backend.onrender.com/group`, {
           method: "post",
           headers: {
             "Content-Type": "application/json",
           },
           credentials: "include",
           body: JSON.stringify(data),
+        }),
+        {
+          loading: "loading data",
+          success: "data loaded successfully",
+          error: "faild to load data",
         }
       );
       const result = await response.json();
