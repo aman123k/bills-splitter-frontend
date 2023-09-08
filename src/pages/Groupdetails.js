@@ -34,14 +34,17 @@ function Groupdetails() {
   };
   const getGroupMembers = useCallback(async () => {
     try {
-      const response = await fetch("http://localhost:8000/getGroupMembers", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify({ id: id }),
-      });
+      const response = await fetch(
+        "https://bills-splitter-backend.onrender.com/getGroupMembers",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify({ id: id }),
+        }
+      );
       const result = await response.json();
 
       if (result.success === false) {
