@@ -97,7 +97,7 @@ function ExpanseStruc({ addExpense, Member, user, allExpense }) {
         <Checkbutton allExpense={allExpense} user={user} />
       )}
       <div
-        className={`absolute top-0 w-full bg-black opacity-40 h-full translate-x-[-100%] duration-70000 ease-in-out
+        className={`absolute top-0 w-full bg-black opacity-40 h-screen translate-x-[-100%] duration-70000 ease-in-out
            ${
              addExpense
                ? "max-[950px]:translate-x-0 "

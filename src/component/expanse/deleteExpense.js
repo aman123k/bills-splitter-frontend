@@ -1,7 +1,7 @@
 const deleteExpense = async (id, groupId, navigation, toast) => {
   try {
     const response = await fetch(
-      `https://bills-splitter-backend.onrender.com/${id}`,
+      `https://bills-splitter-backend.onrender.com/deleteExpense/${id}`,
       {
         method: "POST",
         headers: {
