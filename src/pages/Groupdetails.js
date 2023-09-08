@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import Header from "../component/Header";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { Toaster, toast } from "react-hot-toast";
@@ -32,19 +32,16 @@ function Groupdetails() {
       setSlide("Balance");
     }
   };
-  const getGroupMembers = async () => {
+  const getGroupMembers = useCallback(async () => {
     try {
-      const response = await fetch(
-        "https://bills-splitter-backend.onrender.com/getGroupMembers",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-          body: JSON.stringify({ id: id }),
-        }
-      );
+      const response = await fetch("http://localhost:8000/getGroupMembers", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({ id: id }),
+      });
       const result = await response.json();
 
       if (result.success === false) {
@@ -62,11 +59,11 @@ function Groupdetails() {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  };
+  }, [id]);
   useEffect(() => {
     getExpense({ id: id }, setAllExpense);
     getGroupMembers();
-  }, [id]);
+  }, [id, getGroupMembers]);
   let participant = Member.member?.length;
   return (
     <section
