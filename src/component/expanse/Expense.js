@@ -86,7 +86,7 @@ function Expense({
         />
         {/* addExpanse form */}
         <div
-          className={`w-[38%] max-[600px]:w-[80%] max-[950px]:w-[55%] bg-white shadow-black  drop-shadow-lg
+          className={`w-[38%] max-[600px]:w-[90%] max-[950px]:w-[55%] bg-white shadow-black  drop-shadow-lg
           rounded-lg mr-7  max-[950px]:absolute max-[950px]:translate-y-[-50%]
            overflow-hidden top-[50%] duration-500
            ${
