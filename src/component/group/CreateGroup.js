@@ -41,7 +41,7 @@ function CreateGroup({ setImage, setMembers, setUser }) {
     if (!groupname) {
       return toast.error("Enter Group name");
     } else if (groupMember.length === 0) {
-      return toast.error("Please Add Group mumber");
+      return toast.error("Please Add Group member");
     } else if (groupType === "") {
       return toast.error("Please select type ");
     } else {
