@@ -11,10 +11,14 @@ function Balance({ allExpense, user }) {
       <section
         className={`gap-x-3.5 gap-y-6 px-5 items-center
               max-[550px]:grid-cols-1 my-4 max-[550px]:px-0
-              ${allExpense.length !== 0 ? "grid grid-cols-2" : ""}`}
+              ${
+                allExpense.length !== 0
+                  ? "grid grid-cols-2 max-[550px]:px-0"
+                  : "max-[550px]:px-5"
+              }`}
       >
         {allExpense.length === 0 ? (
-          <div className=" flex items-center gap-2 bg-[#96fc96] w-full py-4 rounded-lg px-3 mx-5">
+          <div className=" flex items-center gap-2 bg-[#96fc96] w-full py-4 rounded-lg px-3 ">
             <p className="text-[#1a521a] font-semibold tracking-wide">
               Bills not found
             </p>
