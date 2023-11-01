@@ -43,13 +43,9 @@ const groupStucture = (member, index, image, user, navigation) => {
             <p className="text-xs max-[550px]:hidden">
               Created by
               <span className=" capitalize text-purple-600 ml-1">
-                {member.member.map((creater) => {
-                  if (member.createrId === user.email) {
-                    return "you";
-                  } else {
-                    return creater.name;
-                  }
-                })}
+                {member.createrId === user.email
+                  ? "you"
+                  : member?.member[member?.length - 1]?.name}
               </span>
             </p>
           </div>
