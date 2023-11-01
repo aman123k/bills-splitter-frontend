@@ -78,7 +78,11 @@ function Expense({
         className=" flex gap-6 max-[550px]:flex-col items-start 
       max-[550px]:mt-4  select-none"
       >
-        <ExpanseStruc addExpense={addExpense} Member={Member} user={user} />
+        <ExpanseStruc
+          addExpense={addExpense}
+          user={user}
+          allExpense={allExpense}
+        />
         {/* addExpanse form */}
         <div
           className={`w-[38%] max-[600px]:w-[90%] max-[950px]:w-[55%] bg-white shadow-black  drop-shadow-lg
