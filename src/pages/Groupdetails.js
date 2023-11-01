@@ -116,7 +116,7 @@ function Groupdetails() {
         </header>
       </section>
 
-      <div className=" mt-5">
+      <div className="pt-5">
         <ul
           className="flex gap-6 justify-center bg-[#f3f3f3] w-max ml-[50%] select-none items-center
          shadow-lg translate-x-[-50%] py-1.5  px-3 font-Nunito rounded-2xl relative overflow-hidden"

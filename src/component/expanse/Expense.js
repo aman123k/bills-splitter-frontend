@@ -75,19 +75,14 @@ function Expense({
   return (
     <>
       <section
-        className=" flex gap-6 mt-5 mb-4 max-[550px]:flex-col items-start 
-      max-[550px]:mt-4 max-[550px]:mb-0 select-none"
+        className=" flex gap-6 max-[550px]:flex-col items-start 
+      max-[550px]:mt-4  select-none"
       >
-        <ExpanseStruc
-          addExpense={addExpense}
-          Member={Member}
-          user={user}
-          allExpense={allExpense}
-        />
+        <ExpanseStruc addExpense={addExpense} Member={Member} user={user} />
         {/* addExpanse form */}
         <div
           className={`w-[38%] max-[600px]:w-[90%] max-[950px]:w-[55%] bg-white shadow-black  drop-shadow-lg
-          rounded-lg mr-7  max-[950px]:absolute max-[950px]:translate-y-[-50%]
+          rounded-lg mt-14  max-[950px]:absolute max-[950px]:translate-y-[-50%]
            overflow-hidden top-[50%] duration-500
            ${
              addExpense
