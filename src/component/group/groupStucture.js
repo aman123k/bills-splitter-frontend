@@ -44,10 +44,10 @@ const groupStucture = (member, index, image, user, navigation) => {
               Created by
               <span className=" capitalize text-purple-600 ml-1">
                 {member.member.map((creater) => {
-                  if (member.createrId === creater.email) {
-                    return creater.name;
+                  if (member.createrId === user.email) {
+                    return "you";
                   } else {
-                    return "";
+                    return creater.name;
                   }
                 })}
               </span>
