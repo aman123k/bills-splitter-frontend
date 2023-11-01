@@ -80,6 +80,7 @@ function Expense({
       >
         <ExpanseStruc
           addExpense={addExpense}
+          Member={Member}
           user={user}
           allExpense={allExpense}
         />

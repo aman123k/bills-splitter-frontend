@@ -3,7 +3,7 @@ import { BsEmojiSmile } from "react-icons/bs";
 import Checkbutton from "./helper/Checkbutton";
 import { ThemeContext } from "../../context/global";
 
-function ExpanseStruc({ addExpense, user, allExpense }) {
+function ExpanseStruc({ addExpense, Member, user, allExpense }) {
   const { settlement, setSettlement } = useContext(ThemeContext);
   return (
     <>
@@ -30,7 +30,7 @@ function ExpanseStruc({ addExpense, user, allExpense }) {
             [...allExpense]?.reverse()?.map((expense, index) => {
               return (
                 <div
-                  className="rounded-lg overflow-hidden h-min bg-gray-300"
+                  className="rounded-lg overflow-hidden h-max bg-gray-300"
                   key={index}
                 >
                   <div className=" grid grid-cols-3 justify-between text-white bg-purple-800 ">
