@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Header from "../component/Header";
 import img from "../images/reciver.jpg";
-import { useNavigate } from "react-router-dom";
 import { BiPencil, BiSolidContact } from "react-icons/bi";
 import { SlEnvolopeLetter } from "react-icons/sl";
 import { AiFillStar, AiOutlineLogin } from "react-icons/ai";
@@ -10,7 +9,6 @@ import { GET_USER_INFORMATION } from "../queryKeys/QueryKeys";
 import usePostAPIRequest from "../customHook/usePostAPIRequest";
 
 function Account() {
-  const navigator = useNavigate();
   const { mutateAsync } = usePostAPIRequest();
   const { data: userInformation } = useGetAPIRequest(
     "/getUserInfomation",
@@ -21,7 +19,7 @@ function Account() {
   const userLogout = async () => {
     const response = await mutateAsync({ path: "/logOut", data: {} });
     if (response?.status) {
-      navigator("/login");
+      window.location.href = "/login";
     }
   };
   const [picture, setPicture] = useState(img);
