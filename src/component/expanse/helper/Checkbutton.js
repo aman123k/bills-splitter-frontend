@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../../../context/global";
+import { GroupContext } from "../../../context/global";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { GoCheckCircle } from "react-icons/go";
 import { MdOutlineDeleteOutline } from "react-icons/md";
@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import deleteExpense from "../deleteExpense";
 
 function Checkbutton({ allExpense, user }) {
-  const { settlement, setSettlement } = useContext(ThemeContext);
+  const { settlement, setSettlement } = useContext(GroupContext);
   const navigation = useNavigate();
   const checkSettlement = allExpense.filter((expense) => {
     if (settlement !== "") {

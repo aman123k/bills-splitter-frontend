@@ -1,58 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "../component/Header";
 import img from "../images/reciver.jpg";
-import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { BiPencil, BiSolidContact } from "react-icons/bi";
 import { SlEnvolopeLetter } from "react-icons/sl";
 import { AiFillStar, AiOutlineLogin } from "react-icons/ai";
+import useGetAPIRequest from "../customHook/useGetAPIRequest";
+import { GET_USER_INFORMATION } from "../queryKeys/QueryKeys";
+import usePostAPIRequest from "../customHook/usePostAPIRequest";
 
 function Account() {
-  const navigation = useNavigate();
-  const [userInfo, setuserInfo] = useState({});
-  const getUserInfo = async () => {
-    const response = await fetch(
-      "https://bills-splitter-backend.onrender.com/getUserInfo",
-      {
-        credentials: "include",
-      }
-    );
-    const result = await response.json();
-    if (result.success) {
-      setuserInfo(result.response);
-    } else {
-      window.location.href = "/login";
-    }
-  };
-  const userLogout = async () => {
-    const response = await toast.promise(
-      fetch("https://bills-splitter-backend.onrender.com/userLogout", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      }),
-      {
-        loading: "loading data",
-        success: "data loaded successfully",
-        error: "faild to load data",
-      }
-    );
-    const result = await response.json();
-    if (result.success) {
-      toast.success(result.response);
-      setTimeout(() => {
-        navigation("/login");
-      }, 1000);
-    } else {
-      window.location.href = "/login";
-    }
-  };
-  useEffect(() => {
-    getUserInfo();
-  }, []);
+  const navigator = useNavigate();
+  const { mutateAsync } = usePostAPIRequest();
+  const { data: userInformation } = useGetAPIRequest(
+    "/getUserInfomation",
+    "/login",
+    GET_USER_INFORMATION("/getGroup", "/login")
+  );
 
+  const userLogout = async () => {
+    const response = await mutateAsync({ path: "/logOut", data: {} });
+    if (response?.status) {
+      navigator("/login");
+    }
+  };
   const [picture, setPicture] = useState(img);
 
   function uploadImage(e) {
@@ -105,8 +76,12 @@ function Account() {
             </div>
           </section>
           <header className=" ">
-            <h1 className=" font-semibold text-xl ">{userInfo.name}</h1>
-            <p className=" text-gray-500 tracking-wide">{userInfo.email}</p>
+            <h1 className=" font-semibold text-xl ">
+              {userInformation?.data?.name}
+            </h1>
+            <p className=" text-gray-500 tracking-wide">
+              {userInformation?.data?.email}
+            </p>
           </header>
         </section>
         <div
@@ -143,7 +118,6 @@ function Account() {
           V4.6.4
         </span>
       </section>
-      <Toaster />
     </div>
   );
 }

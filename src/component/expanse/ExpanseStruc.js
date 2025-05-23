@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { BsEmojiSmile } from "react-icons/bs";
 import Checkbutton from "./helper/Checkbutton";
-import { ThemeContext } from "../../context/global";
+import { GroupContext } from "../../context/global";
 
 function ExpanseStruc({ addExpense, Member, user, allExpense }) {
-  const { settlement, setSettlement } = useContext(ThemeContext);
+  const { settlement, setSettlement } = useContext(GroupContext);
   return (
     <>
       <div className={`w-[56%] max-[950px]:w-full `}>

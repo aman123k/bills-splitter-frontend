@@ -9,7 +9,7 @@ import Expense from "../component/expanse/Expense";
 import Balance from "../component/expanse/Balance";
 import getExpense from "../component/expanse/GetExpense";
 import deleteGroup from "../component/group/deleteGroup";
-import { ThemeContext } from "../context/global";
+import { GroupContext } from "../context/global";
 
 function Groupdetails() {
   const { id } = useParams();
@@ -19,7 +19,7 @@ function Groupdetails() {
   const [user, setUser] = useState([]);
   const [image, setImage] = useState([]);
   const [allExpense, setAllExpense] = useState([]);
-  const { settlement } = useContext(ThemeContext);
+  const { settlement } = useContext(GroupContext);
   const navigation = useNavigate();
 
   const changer = (e) => {

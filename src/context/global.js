@@ -1,31 +1,19 @@
 import React, { createContext, useState } from "react";
-const ThemeContext = createContext();
+const GroupContext = createContext();
 
-function ThemeContextProvider(props) {
-  const [open, setOpen] = useState(false);
-  const [members, setMembers] = useState([]);
-  const [image, setImage] = useState();
-  const [settlement, setSettlement] = useState("");
-  const [user, setUser] = useState([]);
+function GroupContextProvider(props) {
+  const [openGroupPopUp, setOpenGroupPopUp] = useState(false);
 
   return (
-    <ThemeContext.Provider
+    <GroupContext.Provider
       value={{
-        open,
-        setOpen,
-        image,
-        setImage,
-        members,
-        setMembers,
-        settlement,
-        setSettlement,
-        user,
-        setUser,
+        openGroupPopUp,
+        setOpenGroupPopUp,
       }}
     >
       {props.children}
-    </ThemeContext.Provider>
+    </GroupContext.Provider>
   );
 }
 
-export { ThemeContext, ThemeContextProvider };
+export { GroupContext, GroupContextProvider };
