@@ -1,8 +1,8 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Header from "../component/Header";
 import Slider from "../component/Slider";
 import { GroupContext } from "../context/global";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import GroupCard from "../component/groupScreenComponents/GroupCard";
 import useGetAPIRequest from "../customHook/useGetAPIRequest";
 import { GET_GROUPS } from "../queryKeys/QueryKeys";
@@ -15,12 +15,6 @@ function Home() {
     "/login",
     GET_GROUPS("/getGroup", "/login")
   );
-  const navigator = useNavigate();
-  const cookie = document.cookie;
-
-  useEffect(() => {
-    if (!cookie) navigator("/login");
-  }, [cookie, navigator]);
 
   return (
     <section className="bg-[#F9FAFB]">

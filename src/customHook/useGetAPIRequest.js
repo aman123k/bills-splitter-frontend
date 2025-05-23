@@ -31,6 +31,5 @@ const getAPIRequest = async (path, navigate, navigation) => {
     }
   } catch (err) {
     console.log(err);
-    toast.error(GROUP_MESSAGE?.ERROR);
   }
 };
